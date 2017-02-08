@@ -9,3 +9,5 @@ anything worth your time here. This PSA was brought to you by Worldwide Time Sav
 **MVCMoviePt1** - the first part of [ASP.NET Core tutorial](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/).
 
 **MVCMovieEF** - the second part of the [ASP.NET Core tutorial](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/). The division is as per [tutorial's approach](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-model#create-a-new-project-with-individual-user-accounts). 
+
+**AsyncAwaitPlayground** - a tiny project with a simple demosntration how async/await keywords work and how they are related to Tasks.
