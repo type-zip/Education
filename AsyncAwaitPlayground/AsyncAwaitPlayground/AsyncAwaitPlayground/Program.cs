@@ -18,6 +18,8 @@ namespace AsyncAwaitPlayground
             StringProcessor sp = new AsyncStringProcessor();
             sp.Process();
 
+            Console.WriteLine();
+
             sp = new TaskStringProcessor();
             sp.Process();
             Console.ReadLine();

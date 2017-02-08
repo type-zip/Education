@@ -10,7 +10,11 @@ namespace AsyncAwaitPlayground
     {
         public override string Process()
         {
+            Console.WriteLine("> TaskStringProcessor");
+
             Task<int> valueTask = ProcessData();
+            Console.WriteLine($"valueTask ID: {valueTask.Id}");
+
             string resultString = "The result of calculation is - ";
             resultString += valueTask.Result;
 
@@ -18,9 +22,12 @@ namespace AsyncAwaitPlayground
             return resultString;
         }
 
+        // This method might be moved parent class but I'll leave it here for example clarification
         private Task<int> ProcessData()
         {
-            return Task.Run(() => { return 2 * 2; });
+            Task<int> processDataTask = Task.Run(() => { return 2 * 2; });
+            Console.WriteLine($"processDataTask ID: {processDataTask.Id}");
+            return processDataTask;
         }
     }
 }
