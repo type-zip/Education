@@ -5,6 +5,6 @@ The point of this project was (apart from gaining understaing on how git would r
 http://stackoverflow.com/a/18982576
 Turns out that while the benefits of async/await are not not really visible in a HelloWorld-tier project, they can significantly simplify the code even in a slighttly more complex scenario.
 
-## A good intro into async and await
+## A good intro into async and await by Stephen Cleary
 http://blog.stephencleary.com/2012/02/async-and-await.html
-The guy got an interesting idea: the async keyword simply allows the usage of await keyword and the await keyword is just an "asynchronous wait".
+>I like to think of “await” as an “asynchronous wait”. That is to say, the async method pauses until the awaitable is complete (so it waits), but the actual thread is not blocked (so it’s asynchronous).
