@@ -64,7 +64,7 @@ namespace AsyncAwaitPlayground
             // At this point CreateStringWithValueAsync will be suspended until the ProcessData() returns value and
             // the execution will return to the SimpleExample()
             resultString += await calculationResult;
-            // --------------------- EVERYTHING PAST THIS LINE CONTNUES ON THE TASK'S THREAD ---------------------
+            // --------------------- EVERYTHING PAST THIS LINE CONTINUES ON THE TASK'S THREAD ---------------------
 
             // Once ProcessData() is completed, the execution of CreateStringWithValueAsync is resumed (even if it's result isn't yet requested by SimpleExample())
             // on the task's thread, independently from the main thread that may or may not wait for the task's value at this point
