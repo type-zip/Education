@@ -81,6 +81,7 @@ namespace AsyncAwaitPlayground
         /// </summary>
         static Task<int> ProcessData()
         {
+            // Task is instantly shcheduled for execution upon its creaion, thus spawning new thread
             return Task<int>.Run(() => { return 2 * 2; }); // A NEW THREAD IS CREATED HERE
         }
 
