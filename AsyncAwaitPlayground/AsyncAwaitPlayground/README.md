@@ -4,3 +4,7 @@ The point of this project was (apart from gaining understaing on how git would r
 ## Async keyword usefulness example
 http://stackoverflow.com/a/18982576
 Turns out that while the benefits of async/await are not not really visible in a HelloWorld-tier project, they can significantly simplify the code even in a slighttly more complex scenario.
+
+## A good intro into async and await
+http://blog.stephencleary.com/2012/02/async-and-await.html
+The guy got and interesting idea: the async keyword simple allows the usage of await keyword and the await keyword is simplyan "asynchronous wait".
