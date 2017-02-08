@@ -7,4 +7,4 @@ Turns out that while the benefits of async/await are not not really visible in a
 
 ## A good intro into async and await
 http://blog.stephencleary.com/2012/02/async-and-await.html
-The guy got and interesting idea: the async keyword simple allows the usage of await keyword and the await keyword is simplyan "asynchronous wait".
+The guy got an interesting idea: the async keyword simply allows the usage of await keyword and the await keyword is just an "asynchronous wait".
