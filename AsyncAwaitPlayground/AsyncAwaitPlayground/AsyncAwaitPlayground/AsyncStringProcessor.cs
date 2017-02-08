@@ -60,7 +60,7 @@ namespace AsyncAwaitPlayground
             // on the task's thread, independently from the main thread that may or may not wait for the task's value at this point
 
             // We're free to perform other operations over the calculationResult before we'll return the value from this
-            // method, implicitly setting the value of the task captured in SomeExample()'s stringWithValueTask variable
+            // method, implicitly setting the value of the task captured in Process()'s stringWithValueTask variable
             return resultString;
         }
 
