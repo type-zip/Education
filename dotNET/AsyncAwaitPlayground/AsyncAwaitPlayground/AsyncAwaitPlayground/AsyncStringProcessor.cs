@@ -20,7 +20,7 @@ namespace AsyncAwaitPlayground
             // At this point Process() is suspended until the CreateStringWithValueAsync() reaches the await statement, then the execution
             // of Process() is continued while CreateStringWithValueAsync() waits for ProcessData() to complete on another thread
  
-            Console.WriteLine($"stringWithValueTask ID: {stringWithValueTask.Id}");
+            Console.WriteLine($"stringWithValueTask ID: {stringWithValueTask.Id}");            
             // It's interesting to notice that stringWithValueTask actually holds the continuation of the calculationResultTask, which is the
             // separate task iteself. This is evidenced by the different task id than the other two.
 
@@ -65,7 +65,7 @@ namespace AsyncAwaitPlayground
             // on the task's thread, independently from the main thread that may or may not wait for the task's value at this point
 
             // We're free to perform other operations over the calculationResultTask before we'll return the value from this
-            // method, implicitly setting the value of the task captured in Process()'s stringWithValueTask variable
+            // method, implicitly setting the value of the task captured in Process()'s stringWithValueTask variable            
             return resultString;
         }
 
