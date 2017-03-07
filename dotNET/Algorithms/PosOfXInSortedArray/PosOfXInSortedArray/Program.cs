@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PosOfXInSortedArray
 {
@@ -26,8 +22,10 @@ namespace PosOfXInSortedArray
             Console.WriteLine($"X is: {Xvalue}");
 
             int result = Solution(values, Xvalue);
+            int resultRec = SolutionRecursive(values, Xvalue, 0, values.Length - 1);
 
             Console.WriteLine($"The position of X is: {result}");
+            Console.WriteLine($"The position of X is (found recursively): {resultRec}");
             Console.ReadLine();
         }
 
@@ -58,6 +56,19 @@ namespace PosOfXInSortedArray
             }
 
             return -1;
+        }
+
+        static int SolutionRecursive(int[] sortedArray, int x, int lowerBorder, int upperBorder)
+        {
+            int middle = (lowerBorder + upperBorder) / 2;
+
+            if(x == sortedArray[middle])
+                return (middle + 1);
+
+            if (x > sortedArray[middle])
+                return SolutionRecursive(sortedArray, x, middle + 1, upperBorder);
+            else
+                return SolutionRecursive(sortedArray, x, lowerBorder, middle - 1);
         }
 
         public static void PrintArray(int[] array)
