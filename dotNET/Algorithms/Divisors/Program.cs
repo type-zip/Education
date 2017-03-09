@@ -9,37 +9,40 @@ namespace Divisors
     {
         static void Main(string[] args)
         {
-            int[] array = new int[20];
+            //int[] array = new int[20];
 
-            var r = new Random();
-            for (int i = 0; i < array.Length; i++)
-                array[i] = r.Next(1, 1000);
+            //var r = new Random();
+            //for (int i = 0; i < array.Length; i++)
+            //    array[i] = r.Next(1, 1000);
 
-            GetPrimeFactors(100.0);
+            //GetPrimeFactors(100.0);
 
-            Console.Write("Array: ");
-            PrintCollection(array);
+            //Console.Write("Array: ");
+            //PrintCollection(array);
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                var divisors = GetDivisors(array[i]);
-                var primeDivisors = divisors.Where(d => IsPrimeNumber(d));
-                var primeFactors = GetPrimeFactors(array[i]);
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    var divisors = GetDivisors(array[i]);
+            //    var primeDivisors = divisors.Where(d => IsPrimeNumber(d));
+            //    var primeFactors = GetPrimeFactors(array[i]);
 
-                Console.Write($" The divisors of {array[i].ToString().PadRight(3)} are:\t");
-                PrintCollection(divisors);
+            //    Console.Write($" The divisors of {array[i].ToString().PadRight(3)} are:\t");
+            //    PrintCollection(divisors);
 
-                Console.Write($"      --- of those prime:\t");
-                PrintCollection(primeDivisors);
+            //    Console.Write($"      --- of those prime:\t");
+            //    PrintCollection(primeDivisors);
 
-                Console.Write($" The prime factors of {array[i].ToString().PadRight(3)} are:\t");
-                PrintCollection(primeFactors);
+            //    Console.Write($" The prime factors of {array[i].ToString().PadRight(3)} are:\t");
+            //    PrintCollection(primeFactors);
 
-                Console.WriteLine();
-                Console.WriteLine();
-            }
+            //    Console.WriteLine();
+            //    Console.WriteLine();
+            //}
+
+            IsPrimeNumber(Int32.MaxValue);
+            IsPrimeNumberFermat(Int32.MaxValue);
 
             Console.ReadLine();
         }
@@ -59,15 +62,47 @@ namespace Divisors
 
         private static bool IsPrimeNumber(int n)
         {
+            int cycles = 0;
+
             if (n % 2 == 0)
                 return false; // prime numbers only divide by one and themselves, the rest are compound (I guess?) numbers
 
             double sqrtN = Math.Round(Math.Sqrt(n));
-            
-            for(int i = 2; i < sqrtN; i++)
-                if (n % i == 0)
-                    return false;
 
+            for (int i = 2; i < sqrtN; i++)
+            {
+                cycles++;
+
+                if (n % i == 0)
+                {
+                    Console.WriteLine($"Prime test cycles: {cycles}");
+                    return false;
+                }
+            }
+
+            Console.WriteLine($"Prime test cycles: {cycles}");
+            return true;
+        }
+
+        private static bool IsPrimeNumberFermat(int p, int maxTests = 10)
+        {
+            int cycles = 0;
+
+            Random gen = new Random();
+
+            for (int i = 0; i < maxTests; i++)
+            {
+                cycles++;
+                int n = gen.Next(0, p);
+
+                if (Math.Pow(n, (p - 1)) % p != 1)
+                {
+                    Console.WriteLine($"Fermat prime test cycles: {cycles}");
+                    return false;
+                }
+            }
+
+            Console.WriteLine($"Fermat prime test cycles: {cycles}");
             return true;
         }
 
