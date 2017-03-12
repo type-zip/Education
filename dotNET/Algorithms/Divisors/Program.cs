@@ -12,22 +12,53 @@ namespace Divisors
             List<double> elements = new List<double>();
             Random rg = new Random();
 
-            for (int i = 1; i <= 50000; i++)
+            for (int i = 1; i <= 300000; i++)
                 elements.Add(i);
 
-            System.Diagnostics.Stopwatch stopwatch = System.Diagnostics.Stopwatch.StartNew();
             FactorCounter fc = new FactorCounter(elements);
-            Console.WriteLine(fc.GetFactorsCount());
+
+            Console.WriteLine("[Optimized]");
+            System.Diagnostics.Stopwatch stopwatch = System.Diagnostics.Stopwatch.StartNew();
+            Console.WriteLine($"Prime factor count {fc.GetFactorsCount()}");
             stopwatch.Stop();
-            //fc.PrintCollection();
+
+            //fc.PrintData();
+            var optimizedSet = fc.GetData();
+            
             Console.WriteLine($"Calculation took: {stopwatch.ElapsedMilliseconds} ms.");
+            Console.WriteLine($"Factorization operations count: {fc.FactorizationOperationsCount}");
 
-            Console.ReadLine();
+            Console.WriteLine();
 
+            Console.WriteLine("[Non-optimized]");
             stopwatch.Restart();
-            Console.WriteLine(fc.GetFactorsCount());
+            Console.WriteLine($"Prime factor count {fc.GetFactorsCount()}");
             stopwatch.Stop();
-            Console.WriteLine($"Non-optimized calculation took: {stopwatch.ElapsedMilliseconds} ms.");
+
+            //fc.PrintData();
+            var nonoptimizedSet = fc.GetData();
+
+            Console.WriteLine($"Calculation took: {stopwatch.ElapsedMilliseconds} ms.");
+            Console.WriteLine($"Factorization operations count: {elements.Count}");
+
+            Console.WriteLine();
+            Console.WriteLine("Testing...");
+
+            int errorCount = 0;
+
+            for (int i = 1; i < elements.Count; i++)
+            {
+                var kvpO = optimizedSet.Find(m => m.Value == i);
+                var kvpNO = nonoptimizedSet.Find(m => m.Value == i);
+
+                if (kvpNO.ToString() != kvpO.ToString())
+                {
+                    Console.WriteLine($"[!] Error at value {i}: optmized set [{kvpO}], nonoptimized [{kvpNO}]");
+                    errorCount++;
+                }
+            }
+
+            Console.WriteLine($"Testing done. Error count {errorCount}.");
 
             Console.ReadLine();
         }

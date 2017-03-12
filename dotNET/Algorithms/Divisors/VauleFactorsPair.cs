@@ -36,5 +36,26 @@ namespace Divisors
             IsEven = (value % 2 == 0) ? true : false;
             Factors = new Dictionary<int, int>();
         }
+
+        public override string ToString()
+        {
+            List<int> factors = new List<int>();
+
+            foreach (var vkp in Factors)
+                for (int e = 0; e < vkp.Value; e++)
+                    factors.Add(vkp.Key);
+
+            factors.Sort();
+
+            StringBuilder factorStringBuilder = new StringBuilder();
+
+            foreach (var f in factors)
+            {
+                factorStringBuilder.Append(f);
+                factorStringBuilder.AppendFormat(" ");
+            }
+
+            return factorStringBuilder.ToString();
+        }
     }
 }
