@@ -9,43 +9,30 @@ namespace Divisors
     {
         static void Main(string[] args)
         {
-            //int[] array = new int[20];
+            List<double> elements = new List<double>();
+            Random rg = new Random();
 
-            //var r = new Random();
-            //for (int i = 0; i < array.Length; i++)
-            //    array[i] = r.Next(1, 1000);
+            for (int i = 1; i <= 50000; i++)
+                elements.Add(i);
 
-            //GetPrimeFactors(100.0);
+            System.Diagnostics.Stopwatch stopwatch = System.Diagnostics.Stopwatch.StartNew();
+            FactorCounter fc = new FactorCounter(elements);
+            Console.WriteLine(fc.GetFactorsCount());
+            stopwatch.Stop();
+            //fc.PrintCollection();
+            Console.WriteLine($"Calculation took: {stopwatch.ElapsedMilliseconds} ms.");
 
-            //Console.Write("Array: ");
-            //PrintCollection(array);
+            Console.ReadLine();
 
-            //Console.WriteLine();
-
-            //for (int i = 0; i < array.Length; i++)
-            //{
-            //    var divisors = GetDivisors(array[i]);
-            //    var primeDivisors = divisors.Where(d => IsPrimeNumber(d));
-            //    var primeFactors = GetPrimeFactors(array[i]);
-
-            //    Console.Write($" The divisors of {array[i].ToString().PadRight(3)} are:\t");
-            //    PrintCollection(divisors);
-
-            //    Console.Write($"      --- of those prime:\t");
-            //    PrintCollection(primeDivisors);
-
-            //    Console.Write($" The prime factors of {array[i].ToString().PadRight(3)} are:\t");
-            //    PrintCollection(primeFactors);
-
-            //    Console.WriteLine();
-            //    Console.WriteLine();
-            //}
-
-            IsPrimeNumber(Int32.MaxValue);
-            IsPrimeNumberFermat(Int32.MaxValue);
+            stopwatch.Restart();
+            Console.WriteLine(fc.GetFactorsCount());
+            stopwatch.Stop();
+            Console.WriteLine($"Non-optimized calculation took: {stopwatch.ElapsedMilliseconds} ms.");
 
             Console.ReadLine();
         }
+
+
 
         private static List<int> GetDivisors(int n)
         {
