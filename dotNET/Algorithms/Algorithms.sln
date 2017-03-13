@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Divisors", "Divisors\Divisors.csproj", "{7061A259-4CD8-413A-93BF-04FE9E350E20}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PosOfXInSortedArray", "PosOfXInSortedArray\PosOfXInSortedArray.csproj", "{F846B5C3-D326-4F0E-A8D1-27576C5E4785}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Algorithms.csproj", "{3FEADCE9-96E0-44A5-A448-FCDE6A8F794C}"
 EndProject
 Global
 	GlobalSection(Performance) = preSolution
@@ -16,14 +14,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7061A259-4CD8-413A-93BF-04FE9E350E20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7061A259-4CD8-413A-93BF-04FE9E350E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7061A259-4CD8-413A-93BF-04FE9E350E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7061A259-4CD8-413A-93BF-04FE9E350E20}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F846B5C3-D326-4F0E-A8D1-27576C5E4785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F846B5C3-D326-4F0E-A8D1-27576C5E4785}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F846B5C3-D326-4F0E-A8D1-27576C5E4785}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F846B5C3-D326-4F0E-A8D1-27576C5E4785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FEADCE9-96E0-44A5-A448-FCDE6A8F794C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FEADCE9-96E0-44A5-A448-FCDE6A8F794C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FEADCE9-96E0-44A5-A448-FCDE6A8F794C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FEADCE9-96E0-44A5-A448-FCDE6A8F794C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

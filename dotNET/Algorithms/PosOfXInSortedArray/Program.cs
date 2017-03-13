@@ -43,8 +43,6 @@ namespace PosOfXInSortedArray
 
         static int SolutionInterpolationSearch(int[] sortedArray, int x)
         {
-
-
             if (sortedArray[0] == x)
                 return 0;
 
