@@ -47,8 +47,10 @@
     <Compile Include="BinaryInterpolationSearch\InterpolationSearch.cs" />
     <Compile Include="Factorization\FactorCounter.cs" />
     <Compile Include="LinkedLists\Cell.cs" />
+    <Compile Include="LinkedLists\DoublyLinkedCell.cs" />
+    <Compile Include="LinkedLists\MergeDoublyLinkedList.cs" />
     <Compile Include="LinkedLists\ReverseLinkedList.cs" />
-    <Compile Include="LinkedLists\SortedLinkedListMerge.cs" />
+    <Compile Include="LinkedLists\MergeLinkedList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -10,10 +10,10 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var rootA = LinkedLists.SortedLinkedListMerge.GetList(1, 10);
-            var rootB = LinkedLists.SortedLinkedListMerge.GetList(5, 8);
+            var rootA = LinkedLists.MergeDoublyLinkedList.GetDoublyLinkedList();
+            var rootB = LinkedLists.MergeDoublyLinkedList.GetDoublyLinkedList(1, 3);
 
-            var result = LinkedLists.SortedLinkedListMerge.MergeSortedIterative(rootA, rootB);
+            var result = LinkedLists.MergeDoublyLinkedList.MergeDoublyLinkedLists(rootA, rootB);
 
             Console.ReadLine();
         }

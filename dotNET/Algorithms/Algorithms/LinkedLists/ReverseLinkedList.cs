@@ -39,7 +39,5 @@ namespace Algorithms.LinkedLists
 
             return previous;
         }
-
-
     }
 }

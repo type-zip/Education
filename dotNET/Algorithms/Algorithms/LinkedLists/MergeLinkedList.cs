@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.LinkedLists
 {
-    class SortedLinkedListMerge
+    class MergeLinkedList
     {
         public static Cell<int> GetList(int start = 1, int amount = 10)
         {
@@ -80,6 +80,26 @@ namespace Algorithms.LinkedLists
                 rootA.Next = rootB;
 
             return resultRoot;
+        }
+
+        public static Cell<int> MergeWithoutAdditionalMemoryRecursive(Cell<int> rootA, Cell<int> rootB)
+        {
+            if (rootA == null)
+                return rootB;
+
+            if (rootB == null)
+                return rootA;
+
+            if (rootA.Value <= rootB.Value)
+            {
+                rootA.Next = MergeSorted(rootA.Next, rootB);
+                return rootA;
+            }
+            else
+            {
+                rootB.Next = MergeSorted(rootA, rootB.Next);
+                return rootB;
+            }
         }
     }
 }
