@@ -54,7 +54,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorting\ArrayProvider.cs" />
-    <Compile Include="Sorting\SortingAlgorithms.cs" />
+    <Compile Include="Sorting\BasicAlgorithms.cs" />
+    <Compile Include="Sorting\HeapSort.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

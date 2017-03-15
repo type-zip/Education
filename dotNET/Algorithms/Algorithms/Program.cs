@@ -11,8 +11,13 @@ namespace Algorithms
         static void Main(string[] args)
         {
             var array = Sorting.ArrayProvider.GetCostraintedArray(10);
-            var result = Sorting.SortingAlgorithms.BubbleSortOptimized(new int[] { 3, 8, 7, 2, 5, 1, 9});
+            var resulta = Sorting.BasicAlgorithms.InsertionSort(new int[] { 3, 8, 2, 1, 5 });
+            var heap = Sorting.HeapSort.MakeHeap(new int[] { 1, 8, 3, 4, 2, 7, 10, 15 });
 
+            Console.WriteLine();
+            Console.WriteLine();
+
+            var result = Sorting.HeapSort.Heapsort(heap);
             Console.ReadLine();
         }
     }

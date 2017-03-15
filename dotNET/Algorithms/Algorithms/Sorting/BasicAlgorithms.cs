@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Sorting
 {
-    class SortingAlgorithms
+    class BasicAlgorithms
     {
         public static int[] InsertionSort(int[] array)
         {
             // Iterate through the whole array. The i variable is going
             // to act as a separator between sorted and unsorted parts of the array
-            for (int i = 0; i < array.Length - 1; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 // Investigate the sorted part of the array for presence of a value that
                 // is bigger than the value of an element at an index i
@@ -105,7 +105,7 @@ namespace Algorithms.Sorting
                  */
 
                 // Iterate throught the whole array looking for the disordered pairs
-                for (int i = 1; i < array.Length - 1; i++)
+                for (int i = 1; i < array.Length; i++)
                 {
 
                     // If such pair is found, correct the order
@@ -137,7 +137,7 @@ namespace Algorithms.Sorting
              * to iterate between position of the first and the last swap. The only issue is that those positions
              * shouldn't change during the passes in the same cycle.
              */
-            int lastDownwardSwapIndex = array.Length - 1;
+            int lastDownwardSwapIndex = array.Length;
             int lastUpwardSwapIndex = 1;
 
             while (notSorted)
