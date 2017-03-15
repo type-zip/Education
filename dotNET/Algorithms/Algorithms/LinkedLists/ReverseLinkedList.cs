@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.LinkedLists
 {
-    public class ReverseLinkedList
+    public static class ReverseLinkedList
     {
         public static Cell<int> GetList()
         {

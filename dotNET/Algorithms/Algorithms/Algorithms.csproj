@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinaryInterpolationSearch\BinarySearch.cs" />
-    <Compile Include="BinaryInterpolationSearch\InterpolationSearch.cs" />
+    <Compile Include="Searching\BinarySearch.cs" />
+    <Compile Include="Searching\InterpolationSearch.cs" />
     <Compile Include="Factorization\FactorCounter.cs" />
     <Compile Include="LinkedLists\Cell.cs" />
     <Compile Include="LinkedLists\DoublyLinkedCell.cs" />
@@ -53,6 +53,8 @@
     <Compile Include="LinkedLists\MergeLinkedList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sorting\ArrayProvider.cs" />
+    <Compile Include="Sorting\SortingAlgorithms.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

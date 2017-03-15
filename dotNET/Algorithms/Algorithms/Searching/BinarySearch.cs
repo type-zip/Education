@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Algorithms.BinaryInterpolationSearch
 {
-    class InterpolationSearch
+    public static class BinarySearch
     {
-        static int SolutionInterpolationSearch(int[] sortedArray, int x)
+        static int SearchBinary(int[] sortedArray, int x)
         {
             if (sortedArray[0] == x)
                 return 0;
@@ -18,12 +18,11 @@ namespace Algorithms.BinaryInterpolationSearch
 
             int lowerBorder = 0;
             int upperBorder = sortedArray.Length - 1;
-            int middle = lowerBorder + (((x - sortedArray[lowerBorder]) * (upperBorder - lowerBorder)) / (sortedArray[upperBorder] - sortedArray[lowerBorder]));
+            int middle = upperBorder / 2;
 
             while (lowerBorder <= upperBorder)
             {
-                middle = lowerBorder + (((x - sortedArray[lowerBorder]) * (upperBorder - lowerBorder)) / (sortedArray[upperBorder] - sortedArray[lowerBorder]));
-                Console.WriteLine($"{middle} = {lowerBorder} + ((({x} - {sortedArray[lowerBorder]}) * ({upperBorder} - {lowerBorder})) / ({sortedArray[upperBorder]} - {sortedArray[lowerBorder]}))");
+                middle = (lowerBorder + upperBorder) / 2;
 
                 if (x == sortedArray[middle])
                     return middle + 1;
@@ -36,6 +35,19 @@ namespace Algorithms.BinaryInterpolationSearch
             }
 
             return -1;
+        }
+
+        static int RecursiveSearchBeinary(int[] sortedArray, int x, int lowerBorder, int upperBorder)
+        {
+            int middle = (lowerBorder + upperBorder) / 2;
+
+            if (x == sortedArray[middle])
+                return (middle + 1);
+
+            if (x > sortedArray[middle])
+                return RecursiveSearchBeinary(sortedArray, x, middle + 1, upperBorder);
+            else
+                return RecursiveSearchBeinary(sortedArray, x, lowerBorder, middle - 1);
         }
     }
 }

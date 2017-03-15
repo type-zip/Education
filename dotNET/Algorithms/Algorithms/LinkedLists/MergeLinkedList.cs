@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms.LinkedLists
 {
-    class MergeLinkedList
+    public static class MergeLinkedList
     {
         public static Cell<int> GetList(int start = 1, int amount = 10)
         {
