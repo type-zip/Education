@@ -10,10 +10,8 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var rootA = LinkedLists.MergeDoublyLinkedList.GetDoublyLinkedList();
-            var rootB = LinkedLists.MergeDoublyLinkedList.GetDoublyLinkedList(1, 3);
-
-            var result = LinkedLists.MergeDoublyLinkedList.MergeDoublyLinkedLists(rootA, rootB);
+            var array = Sorting.ArrayProvider.GetCostraintedArray(10);
+            var result = Sorting.SortingAlgorithms.BubbleSortOptimized(new int[] { 3, 8, 7, 2, 5, 1, 9});
 
             Console.ReadLine();
         }
