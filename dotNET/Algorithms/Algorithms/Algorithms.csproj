@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\BinaryTreePrinter.cs" />
+    <Compile Include="Common\Types\BinaryTreeNode.cs" />
     <Compile Include="Searching\BinarySearch.cs" />
     <Compile Include="Searching\InterpolationSearch.cs" />
     <Compile Include="Factorization\FactorCounter.cs" />

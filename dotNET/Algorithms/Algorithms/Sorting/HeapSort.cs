@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Algorithms.Common;
+using Algorithms.Common.Types;
 
 namespace Algorithms.Sorting
 {
@@ -11,7 +13,7 @@ namespace Algorithms.Sorting
         public static int[] MakeHeap(int[] array)
         {
             int[] heap = new int[array.Length];
-            Array.Copy(array, heap, array.Length - 1);
+            Array.Copy(array, heap, array.Length);
 
             for (int i = 0; i < heap.Length; i++)
             {
@@ -128,72 +130,31 @@ namespace Algorithms.Sorting
             return heap;
         }
 
-        private class HeapTreeVisualizer
+        public class HeapTreeVisualizer
         {
-            private class Layer
-            {
-                public List<HeapElement> Elements = new List<HeapElement>();
-            }
-
-            private class HeapElement
-            {
-                public int Value;
-                public HeapElement ChildA;
-                public HeapElement ChildB;
-            }
-
-            private List<Layer> Layers = new List<Layer>();
-
-            private HeapElement BuildHeapTree(int[] heap, int rootIndex, int layer)
+            private BinaryTreeNode BuildHeapTree(int[] heap, int rootIndex)
             {
                 if (rootIndex > heap.Length - 1)
                     return null;
 
-                if (layer > Layers.Count - 1)
-                    Layers.Add(new Layer());
-
                 int root = heap[rootIndex];
-                var childA = BuildHeapTree(heap, 2 * rootIndex + 1, layer + 1);
-                var childB = BuildHeapTree(heap, 2 * rootIndex + 2, layer + 1);
+                var childA = BuildHeapTree(heap, 2 * rootIndex + 1);
+                var childB = BuildHeapTree(heap, 2 * rootIndex + 2);
 
-                var he = new HeapElement()
+                var he = new BinaryTreeNode()
                 {
                     Value = root,
-                    ChildA = childA,
-                    ChildB = childB
+                    Left = childA,
+                    Right = childB
                 };
-
-                Layers[layer - 1].Elements.Add(he);
 
                 return he;
             }
 
             public void VisualizeTree(int[] heap)
             {
-                Layers.Clear();
-                var heapRoot = BuildHeapTree(heap, 0, 1);
-
-                Layer widemostLayer = Layers.OrderBy(o => o.Elements.Count).LastOrDefault();
-                int maxLayerWidth = (widemostLayer.Elements.Count) * 4;
-
-                foreach(var l in Layers)
-                {
-                    int layerWidth = (l.Elements.Count) * 4;
-                    int layerShift = (maxLayerWidth / 2) - (layerWidth / 2);
-                    int spacing = (maxLayerWidth) / l.Elements.Count;
-
-                    for (int i = 0; i < layerShift; i++)
-                        Console.Write(" ");
-
-                    foreach (var e in l.Elements)
-                    {
-                        Console.Write($"[{e.Value}]");
-
-                        for (int s = 0; s < spacing; s++)
-                            Console.Write(" ");
-                    }
-                    Console.WriteLine();
-                }                
+                var heapRoot = BuildHeapTree(heap, 0);
+                heapRoot.Print();              
             }
         }
     }

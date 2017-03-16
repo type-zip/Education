@@ -14,6 +14,9 @@ namespace Algorithms
             var resulta = Sorting.BasicAlgorithms.InsertionSort(new int[] { 3, 8, 2, 1, 5 });
             var heap = Sorting.HeapSort.MakeHeap(new int[] { 1, 8, 3, 4, 2, 7, 10, 15 });
 
+            Sorting.HeapSort.HeapTreeVisualizer htv = new Sorting.HeapSort.HeapTreeVisualizer();
+            htv.VisualizeTree(heap);
+
             Console.WriteLine();
             Console.WriteLine();
 
