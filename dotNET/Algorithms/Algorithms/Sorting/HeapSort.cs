@@ -15,6 +15,11 @@ namespace Algorithms.Sorting
             int[] heap = new int[array.Length];
             Array.Copy(array, heap, array.Length);
 
+            var htv = new HeapTreeVisualizer();
+
+            Console.WriteLine($"Initial heap state:");
+            htv.VisualizeTree(heap);
+
             for (int i = 0; i < heap.Length; i++)
             {
                 int index = i;
@@ -32,6 +37,9 @@ namespace Algorithms.Sorting
 
                     index = parent;
                 }
+
+                Console.WriteLine($"Step {i} / {array.Length}:");
+                htv.VisualizeTree(heap);
             }
 
             return heap;

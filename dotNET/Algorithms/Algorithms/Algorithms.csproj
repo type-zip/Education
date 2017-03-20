@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\BinaryTreePrinter.cs" />
+    <Compile Include="Common\PrintArray.cs" />
     <Compile Include="Common\Types\BinaryTreeNode.cs" />
     <Compile Include="Searching\BinarySearch.cs" />
     <Compile Include="Searching\InterpolationSearch.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Sorting\ArrayProvider.cs" />
     <Compile Include="Sorting\BasicAlgorithms.cs" />
     <Compile Include="Sorting\HeapSort.cs" />
+    <Compile Include="Sorting\QuickSort.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
