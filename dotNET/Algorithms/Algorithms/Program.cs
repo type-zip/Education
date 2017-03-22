@@ -22,9 +22,11 @@ namespace Algorithms
 
             //var result = Sorting.HeapSort.Heapsort(heap);
             //var arr = new int[] { 3, 9, 1, 5, 12, 7, 4, 8, 14, 11, 13, 24, 21, 18, 16, 19, 26, 25, 12 };
-            var arr = new int[] { 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-            Sorting.QuickSort.QuackSort(arr, 0, 19);
+            var arr = new int[] { 2, 4, 6, 3, 5 };
+            Sorting.Mergesort<int>.BookSort(arr, new int[arr.Length], 0, arr.Length - 1);
             Console.ReadLine();
+
+
 
             int[,] quack = new int[2, 2];
             Console.WriteLine(quack.Length);

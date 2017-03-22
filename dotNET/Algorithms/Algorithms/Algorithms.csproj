@@ -59,6 +59,7 @@
     <Compile Include="Sorting\ArrayProvider.cs" />
     <Compile Include="Sorting\BasicAlgorithms.cs" />
     <Compile Include="Sorting\HeapSort.cs" />
+    <Compile Include="Sorting\Mergesort.cs" />
     <Compile Include="Sorting\QuickSort.cs" />
   </ItemGroup>
   <ItemGroup>
