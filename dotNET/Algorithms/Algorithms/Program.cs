@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Algorithms.Sorting;
 
 namespace Algorithms
 {
@@ -21,17 +22,10 @@ namespace Algorithms
             //Console.WriteLine();
 
             //var result = Sorting.HeapSort.Heapsort(heap);
-            //var arr = new int[] { 3, 9, 1, 5, 12, 7, 4, 8, 14, 11, 13, 24, 21, 18, 16, 19, 26, 25, 12 };
-            var arr = new int[] { 2, 4, 6, 3, 5 };
-            Sorting.Mergesort<int>.BookSort(arr, new int[arr.Length], 0, arr.Length - 1);
+            var arr = new int[] { 3, 9, 1, 5, 12, 7, 4, 8, 14, 11, 13, 24, 21, 18, 16, 19, 26, 25, 12 };
+            //var arr = new int[] { 2, 4, 6, 3, 5 };
+            arr.Sort();
             Console.ReadLine();
-
-
-
-            int[,] quack = new int[2, 2];
-            Console.WriteLine(quack.Length);
-            Console.ReadLine();
-
         }
     }
 }

@@ -8,9 +8,8 @@ namespace Algorithms.Sorting
 {
     public static class QuickSort
     {
-
         //https://www.youtube.com/watch?v=3OLTJlwyIqQ
-        public static void QuackSort(int[] array, int start, int end)
+        public static void Sort(int[] array, int start, int end)
         {
             Console.WriteLine($"QuickSort(array: {array.ToString()}, start: {start}, end: {end})");
 
@@ -77,8 +76,8 @@ namespace Algorithms.Sorting
 
             }
 
-            QuackSort(array, start, lowIndex - 1);
-            QuackSort(array, lowIndex + 1, end);
+            Sort(array, start, lowIndex - 1);
+            Sort(array, lowIndex + 1, end);
         }
 
         private static void PrintIndexes(int low, int high, int length)
